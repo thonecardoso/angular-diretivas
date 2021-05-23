@@ -15,3 +15,21 @@
 <p [appHighlight]="'red'" [defaultColor]="'gray'">
   texto com highlight quando eu passo o mouse.
 </p>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui.
+</div>
+<div *ngElse="mostrarCursos">
+  Não existe cursos para serem listados.
+</div>
+<br>
+
+<br>
+
+<button class="btn btn-info" (click)="onMostrarCursos()">Mostrar Cursos</button>
+
+<ng-template [ngElse]="mostrarCursos">
+  <div>
+    não existe cursos a serem mostrados!
+  </div>
+</ng-template>
